@@ -1,0 +1,30 @@
+package lab3;
+import java.util.Scanner;
+
+public class DivisionExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            System.out.print("Enter value of a: ");
+            int a = scanner.nextInt();
+
+            System.out.print("Enter value of b: ");
+            int b = scanner.nextInt();
+
+            if (b == 0) {
+                throw new ArithmeticException("Cannot divide by zero");
+            }
+
+            int result = a / b;
+            System.out.println("Result of a/b = " + result);
+
+        } catch (ArithmeticException e) {
+            System.out.println("Exception: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Invalid input");
+        } finally {
+            scanner.close();
+        }
+    }
+}
